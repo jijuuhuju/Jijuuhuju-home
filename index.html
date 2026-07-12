@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jijuuhujuホーム</title> <!-- タブの文字を変更 -->
+    <title>jijuuhujuホーム</title>
     <style>
         /* 全体のリセット設定 */
         body {
@@ -18,7 +18,7 @@
             background-color: #98e8e8; /* 水色 */
             padding: 40px 20px;
             display: flex;
-            flex-direction: column; /* 上下に並べる */
+            flex-direction: column;
             align-items: center;
             gap: 15px;
         }
@@ -30,7 +30,7 @@
             color: #333333;
         }
 
-        /* icon.svgを置くグレーの箱（サイズ指定用） */
+        /* icon.svgを置くグレーの箱 */
         .icon-box {
             background-color: #d3d3d3; /* グレー */
             width: 300px;
@@ -52,11 +52,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px; /* 緑の箱とオレンジのボタンの隙間 */
+            gap: 40px;
             padding: 60px 20px;
         }
 
-        /* streech.svgを置く黄緑の箱（サイズ指定用） */
+        /* streech.svgを置く黄緑の箱 */
         .streech-box {
             background-color: #00ff00; /* 黄緑 */
             width: 220px;
@@ -84,8 +84,17 @@
             align-items: center;
             font-size: 32px;
             font-weight: bold;
-            text-decoration: none; /* リンクの下線を消す */
-            border-radius: 4px; /* 角を少し丸くする */
+            text-decoration: none;
+            border-radius: 4px;
+            
+            /* 触れた時と、離れて戻る時の両方を滑らかにする設定 */
+            transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+        }
+
+        /* マウスが乗ったときの変化 */
+        .service-button:hover {
+            transform: scale(1.05); /* 1.05倍に拡大 */
+            background-color: #ffaa22; /* 色を少し明るく */
         }
     </style>
 </head>
@@ -95,7 +104,6 @@
     <div class="header-area">
         <div class="site-title">jijuuhujuホーム</div>
         <div class="icon-box">
-            <!-- ここでicon.svgを読み込んでいます -->
             <img src="icon.svg" alt="アイコン画像">
         </div>
     </div>
@@ -103,11 +111,10 @@
     <!-- メインコンテンツエリア -->
     <div class="main-container">
         <div class="streech-box">
-            <!-- ここでstreech.svgを読み込んでいます -->
             <img src="streech.svg" alt="ストレッチ画像">
         </div>
         
-        <!-- オレンジのボタン（ここを押すとservice.htmlに飛びます） -->
+        <!-- オレンジのボタン -->
         <a href="service.html" class="service-button">
             サービスをすべて見る
         </a>
