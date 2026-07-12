@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サービス一覧 - jijuuhujuホーム</title> <!-- タブの文字を変更 -->
+    <title>サービス一覧 - jijuuhujuホーム</title>
     <style>
         /* 全体のリセット設定 */
         body {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
-            background-color: #f0f8ff; /* 薄い青色の背景 */
+            background-color: #f0f8ff;
             min-height: 100vh;
             position: relative;
         }
@@ -20,17 +20,21 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #333333; /* 黒っぽいボタン */
-            color: #ffffff; /* 白文字 */
+            background-color: #333333;
+            color: #ffffff;
             padding: 10px 20px;
-            text-decoration: none; /* 下線を消す */
+            text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
             font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            /* 触れた時と、離れて戻る時の両方を滑らかにする設定 */
+            transition: transform 0.3s ease-out, background-color 0.3s ease-out;
         }
         .back-button:hover {
-            background-color: #555555; /* ホバー時に少し明るく */
+            transform: scale(1.08); /* 戻るボタンを少し大きく */
+            background-color: #555555;
         }
 
         /* コンテンツ全体の配置調整 */
@@ -39,7 +43,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px; /* 紫と黄色の箱のすきま */
+            gap: 40px;
             padding: 80px 20px;
         }
 
@@ -51,24 +55,27 @@
             align-items: center;
             padding: 0 40px;
             box-sizing: border-box;
-            gap: 30px; /* 画像と文字のすきま */
-            text-decoration: none; /* リンクの下線を消す */
-            transition: opacity 0.2s; /* マウスを乗せた時のアニメーション */
+            gap: 30px;
+            text-decoration: none;
+            
+            /* 触れた時と、離れて戻る時の両方を滑らかにする設定 */
+            transition: transform 0.3s ease-out;
         }
-        /* マウスを乗せた時に少し透明にしてボタン感を出す */
+        
+        /* マウスが乗ったときの変化 */
         .service-card:hover {
-            opacity: 0.8;
+            transform: scale(1.03); /* 大きな箱を少し大きく */
         }
 
         /* 共通：画像が入る白い四角の箱 */
         .img-box {
-            background-color: #ffffff; /* 白背景 */
+            background-color: #ffffff;
             width: 130px;
             height: 130px;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-shrink: 0; /* 箱が潰れないように固定 */
+            flex-shrink: 0;
         }
         .img-box img {
             width: 100%;
@@ -78,20 +85,20 @@
 
         /* 1. 上の段：streechエリア（紫色） */
         .streech-section {
-            background-color: #ccb3ff; /* 紫色 */
+            background-color: #ccb3ff;
         }
         .streech-text {
-            color: #ffffff; /* 白文字 */
+            color: #ffffff;
             font-size: 64px;
             font-weight: bold;
         }
 
         /* 2. 下の段：Jijuuhuju_pbページエリア（黄色） */
         .jijuu-section {
-            background-color: #ffffaa; /* 黄色 */
+            background-color: #ffffaa;
         }
         .jijuu-text {
-            color: #000000; /* 黒文字 */
+            color: #000000;
             font-size: 28px;
             font-weight: bold;
         }
@@ -99,28 +106,22 @@
 </head>
 <body>
 
-    <!-- 右上の戻るボタン（最初のページに戻るリンク） -->
+    <!-- 右上の戻るボタン -->
     <a href="index.html" class="back-button">← 戻る</a>
 
     <!-- メインコンテンツ -->
     <div class="content-container">
 
-        <!-- 
-            👇 上段：streechエリア 
-            「ここに飛ばしたいサイトのURLを入れる」の部分に、実際のURL（例: https://google.com など）を貼り付けてください。
-        -->
-        <a href="https://jijuuhuju.github.io/Streech-editor/" target="_blank" class="service-card streech-section">
+        <!-- 上段：streechエリア -->
+        <a href="ここに飛ばしたいサイトのURLを入れる" target="_blank" class="service-card streech-section">
             <div class="img-box">
                 <img src="streech.svg" alt="Streech画像">
             </div>
             <div class="streech-text">streech</div>
         </a>
 
-        <!-- 
-            👇 下段：Jijuuhuju_pbページエリア 
-            こちらも同様に「ここに飛ばしたいサイトのURLを入れる」の部分にURLを貼り付けてください。
-        -->
-        <a href="https://scratch.mit.edu/users/jijuuhuju_pb/" target="_blank" class="service-card jijuu-section">
+        <!-- 下段：Jijuuhuju_pbページエリア -->
+        <a href="ここに飛ばしたいサイトのURLを入れる" target="_blank" class="service-card jijuu-section">
             <div class="img-box">
                 <img src="icon.svg" alt="icon画像">
             </div>
