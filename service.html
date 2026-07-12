@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス一覧 - jijuuhujuホーム</title> <!-- タブの文字を変更 -->
+    <style>
+        /* 全体のリセット設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f0f8ff; /* 薄い青色の背景 */
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* 🏠 画面右上の「戻る」ボタン */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #333333; /* 黒っぽいボタン */
+            color: #ffffff; /* 白文字 */
+            padding: 10px 20px;
+            text-decoration: none; /* 下線を消す */
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .back-button:hover {
+            background-color: #555555; /* ホバー時に少し明るく */
+        }
+
+        /* コンテンツ全体の配置調整 */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; /* 紫と黄色の箱のすきま */
+            padding: 80px 20px;
+        }
+
+        /* 共通：サービスの大きな箱（リンク） */
+        .service-card {
+            width: 600px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-sizing: border-box;
+            gap: 30px; /* 画像と文字のすきま */
+            text-decoration: none; /* リンクの下線を消す */
+            transition: opacity 0.2s; /* マウスを乗せた時のアニメーション */
+        }
+        /* マウスを乗せた時に少し透明にしてボタン感を出す */
+        .service-card:hover {
+            opacity: 0.8;
+        }
+
+        /* 共通：画像が入る白い四角の箱 */
+        .img-box {
+            background-color: #ffffff; /* 白背景 */
+            width: 130px;
+            height: 130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0; /* 箱が潰れないように固定 */
+        }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* 1. 上の段：streechエリア（紫色） */
+        .streech-section {
+            background-color: #ccb3ff; /* 紫色 */
+        }
+        .streech-text {
+            color: #ffffff; /* 白文字 */
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        /* 2. 下の段：Jijuuhuju_pbページエリア（黄色） */
+        .jijuu-section {
+            background-color: #ffffaa; /* 黄色 */
+        }
+        .jijuu-text {
+            color: #000000; /* 黒文字 */
+            font-size: 28px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 右上の戻るボタン（最初のページに戻るリンク） -->
+    <a href="index.html" class="back-button">← 戻る</a>
+
+    <!-- メインコンテンツ -->
+    <div class="content-container">
+
+        <!-- 
+            👇 上段：streechエリア 
+            「ここに飛ばしたいサイトのURLを入れる」の部分に、実際のURL（例: https://google.com など）を貼り付けてください。
+        -->
+        <a href="ここに飛ばしたいサイトのURLを入れる" target="_blank" class="service-card streech-section">
+            <div class="img-box">
+                <img src="streech.svg" alt="Streech画像">
+            </div>
+            <div class="streech-text">streech</div>
+        </a>
+
+        <!-- 
+            👇 下段：Jijuuhuju_pbページエリア 
+            こちらも同様に「ここに飛ばしたいサイトのURLを入れる」の部分にURLを貼り付けてください。
+        -->
+        <a href="ここに飛ばしたいサイトのURLを入れる" target="_blank" class="service-card jijuu-section">
+            <div class="img-box">
+                <img src="icon.svg" alt="icon画像">
+            </div>
+            <div class="jijuu-text">Jijuuhuju_pbページ</div>
+        </a>
+
+    </div>
+
+</body>
+</html>
