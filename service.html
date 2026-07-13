@@ -36,33 +36,39 @@
             background-color: #555555;
         }
 
-        /* コンテンツ全体の配置調整 */
+        /* コンテンツ全体の配置調整（完全に独立した3つの箱を縦に並べます） */
         .content-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px;
-            padding: 80px 20px;
+            gap: 30px; /* 箱と箱の間のすきま */
+            padding: 100px 20px;
         }
 
-        /* 共通：サービスの大きな箱 */
+        /* 共通：サービスの大きな箱（どこを触っても確実に100%反応します） */
         .service-card {
             width: 600px;
-            height: 200px;
+            height: 160px; /* 3つが綺麗に画面に収まるスマートな高さ */
             display: flex;
             align-items: center;
             padding: 0 40px;
             box-sizing: border-box;
             gap: 30px;
             text-decoration: none;
+            transition: transform 0.3s ease-out; /* 離れたときに滑らかに元に戻る設定 */
+        }
+        
+        /* 触れたときは、どの箱も滑らかに少し大きくなります */
+        .service-card:hover {
+            transform: scale(1.03);
         }
 
         /* 共通：画像が入る白い四角の箱 */
         .img-box {
             background-color: #ffffff;
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -74,50 +80,18 @@
             object-fit: contain;
         }
 
-        /* 1. 上の段：streechエリア（紫色） */
+        /* 🟣 streechエリア共通（紫色） */
         .streech-section {
             background-color: #ccb3ff;
-            justify-content: space-between; /* 両端にバランスよく配置 */
-        }
-        
-        /* 画像とテキストを左側にまとめるための箱 */
-        .streech-left {
-            display: flex;
-            align-items: center;
-            gap: 30px;
         }
         .streech-text {
             color: #ffffff;
-            font-size: 64px;
             font-weight: bold;
         }
 
-        /* ➕ streechリンク一覧ボタン */
-        .streech-link-btn {
-            background-color: #ffffff; /* 白色のボタン */
-            color: #ccb3ff; /* 紫色の文字 */
-            padding: 15px 25px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 30px; /* 丸みのあるかわいいデザイン */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-out, background-color 0.3s ease-out, color 0.3s ease-out;
-        }
-        /* ボタンに触れた時 */
-        .streech-link-btn:hover {
-            transform: scale(1.05);
-            background-color: #ff9900; /* 触れた時はアクセントにオレンジ色に変わる */
-            color: #ffffff; /* 文字は白に */
-        }
-
-        /* 2. 下の段：Jijuuhuju_pbページエリア（黄色） */
+        /* 🟡 Jijuuhuju_pbページエリア（黄色） */
         .jijuu-section {
             background-color: #ffffaa;
-            transition: transform 0.3s ease-out;
-        }
-        .jijuu-section:hover {
-            transform: scale(1.03);
         }
         .jijuu-text {
             color: #000000;
@@ -134,25 +108,32 @@
     <!-- メインコンテンツ -->
     <div class="content-container">
 
-        <!-- 上段：streechエリア（箱全体リンクではなく、中のボタンをクリックする形に変更しました） -->
-        <div class="service-card streech-section">
-            <div class="streech-left">
-                <div class="img-box">
-                    <img src="streech.svg" alt="Streech画像">
-                </div>
-                <div class="streech-text">streech</div>
+        <!-- 
+            👇 【独立した箱1つ目】streechボタン（紫色）
+            「ここにstreechボタンのURLを入れる」の部分に実際のURLを貼り付ける
+        -->
+        <a href="https://jijuuhuju.github.io/Streech-editor/" target="_blank" class="service-card streech-section">
+            <div class="img-box">
+                <img src="streech.svg" alt="Streech画像">
             </div>
-            
-            <!-- 
-                👇 ここにstreechリンク一覧ボタンを設置しました！
-                「ここに飛ばしたいサイトのURLを入れる」の部分に実際のURLを貼り付けてください。
-            -->
-            <a href="ここに飛ばしたいサイトのURLを入れる" target="_blank" class="streech-link-btn">
-                streechリンク一覧
-            </a>
-        </div>
+            <div class="streech-text" style="font-size: 54px;">streech</div>
+        </a>
 
-        <!-- 下段：Jijuuhuju_pbページエリア（こちらは箱全体がリンクです） -->
+        <!-- 
+            👇 【独立した箱2つ目】streechリンク一覧ボタン（紫色・完全に別の場所に独立させました）
+            「ここにstreechリンク一覧のURLを入れる」の部分に実際のURLを貼り付けてください。
+        -->
+        <a href="ここにstreechリンク一覧のURLを入れる" target="_blank" class="service-card streech-section">
+            <div class="img-box">
+                <img src="streech.svg" alt="Streech画像">
+            </div>
+            <div class="streech-text" style="font-size: 40px;">streechリンク一覧</div>
+        </a>
+
+        <!-- 
+            👇 【独立した箱3つ目】Jijuuhuju_pbページボタン（黄色）
+            「ここにJijuuhuju_pbページのURLを入れる」の部分に実際のURLを貼り付けてください。
+        -->
         <a href="https://scratch.mit.edu/users/jijuuhuju_pb/" target="_blank" class="service-card jijuu-section">
             <div class="img-box">
                 <img src="icon.svg" alt="icon画像">
